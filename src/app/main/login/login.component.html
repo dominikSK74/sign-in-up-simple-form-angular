@@ -1,1 +1,90 @@
-<p>login works!</p>
+<section class="main">
+  <div class="box">
+    <div id="login" #login>
+      <form #loginForm [formGroup]="login_form">
+        <span class="material-symbols-outlined person">
+        account_circle
+        </span>
+        <h2>Sign in</h2>
+        <mat-form-field appearance="outline" class="form-1">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Enter email address" formControlName="email">
+          <mat-icon matSuffix>
+            <span class="material-symbols-outlined">
+              contact_mail
+            </span>
+          </mat-icon>
+            <mat-hint *ngIf="login_form.get('email')?.invalid
+                           && (login_form.get('email')?.touched
+                           || login_form.get('email')?.dirty)">Enter a valid email</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Enter password" type="password" formControlName="password">
+          <mat-icon matSuffix>
+            <span class="material-symbols-outlined">
+              password
+            </span>
+          </mat-icon>
+          <mat-hint *ngIf="login_form.get('password')?.invalid
+                           && (login_form.get('password')?.touched
+                           || login_form.get('password')?.dirty)">Password is not correct</mat-hint>
+        </mat-form-field>
+
+        <button mat-raised-button class="btn-1" (click)="login_()">Sign In</button>
+      </form>
+
+      <form #registerForm class="hidden" [formGroup]="register_form">
+        <span class="material-symbols-outlined person">
+          person_add
+        </span>
+        <h2>Sign up</h2>
+        <mat-form-field appearance="outline" class="form-1">
+          <mat-label class="p-r-5">Email</mat-label>
+          <input matInput placeholder="Enter email address" formControlName="email">
+          <mat-icon matSuffix>
+            <span class="material-symbols-outlined">
+              contact_mail
+            </span>
+          </mat-icon>
+          <mat-hint *ngIf="register_form.get('email')?.invalid
+                           && (register_form.get('email')?.touched
+                           || register_form.get('email')?.dirty)">Enter a valid email</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label class="p-15">Password</mat-label>
+          <input matInput placeholder="Enter password" type="password" formControlName="password">
+          <mat-icon matSuffix>
+            <span class="material-symbols-outlined">
+              password
+            </span>
+          </mat-icon>
+          <mat-hint *ngIf="register_form.get('password')?.invalid
+                           && (register_form.get('password')?.touched
+                           || register_form.get('password')?.dirty)"> 8 chars: !@#$%&*, AZ, az, 0-9</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label class="p-30">Confirm password</mat-label>
+          <input matInput placeholder="Enter password again" type="password" formControlName="password_repeat">
+          <mat-icon matSuffix>
+            <span class="material-symbols-outlined">
+              password
+            </span>
+          </mat-icon>
+          <mat-hint *ngIf="passwordMatchError">Password doesn't match</mat-hint>
+        </mat-form-field>
+
+        <button mat-raised-button class="btn-1" (click)="register()">Sign up</button>
+      </form>
+    </div>
+    <div id="text-box" #textBox>
+      <h3>Welcome!</h3><br>
+      <p #text>If you don't have an account yet register here</p>
+      <button mat-raised-button class="btn-2" (click)="toggle()">{{ TOGGLE_BTN_TEXT }}</button>
+    </div>
+
+  </div>
+</section>

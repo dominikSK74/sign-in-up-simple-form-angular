@@ -1,0 +1,25 @@
+@use "@angular/material" as mat;
+@include mat.core();
+
+.mat-mdc-raised-button.mat-unthemed.btn-1 {
+  background-color: var(--deep-purple-500);
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.mat-mdc-raised-button.mat-unthemed.btn-2 {
+  background-color: var(--deep-purple-500);
+  border-radius: 10px;
+  border: 2px solid var(--deep-purple-100);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.mdc-button.btn-1 {
+  width: 175px;
+}

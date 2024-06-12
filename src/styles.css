@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import "forms.scss";
+@import "buttons.scss";
+
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Poppins";
+}
+
+html, body { height: 100%; }
+
+:root {
+  --dark-white: #e2e2e2;
+  --deep-purple-50: #EDE7F6;
+  --deep-purple-100: #D1C4E9;
+  --deep-purple-400: #7E57C2;
+  --deep-purple-500: #673AB7;
+  --deep-purple-600: #5E35B1;
+}
+
+
